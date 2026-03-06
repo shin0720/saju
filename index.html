@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Saju Reading</title>
+  <style>
+    :root {
+      --bg: #f6f1e3;
+      --ink: #1f1a13;
+      --line: #c9b48a;
+      --paper: #fffdf7;
+      --accent: #982d1f;
+      --accent-dark: #6f1e14;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Georgia", "Times New Roman", serif;
+      background: radial-gradient(circle at top left, #efe5ca 0%, var(--bg) 40%);
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffcf4 0%, #f7eed9 100%);
+      padding: 24px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motif {
+      position: absolute;
+      right: -26px;
+      top: -18px;
+      width: 190px;
+      opacity: 0.2;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 4vw, 2.3rem);
+    }
+
+    .desc {
+      margin: 0;
+      line-height: 1.6;
+      max-width: 720px;
+    }
+
+    .card {
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      padding: 16px;
+    }
+
+    .row {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    label {
+      font-size: 0.84rem;
+      color: #5a4a34;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      border: 1px solid #cfbc95;
+      border-radius: 10px;
+      height: 42px;
+      padding: 0 10px;
+      background: #fffefb;
+    }
+
+    .btns {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid #c2aa81;
+      background: #f7ead2;
+      padding: 0 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      border-color: var(--accent-dark);
+      color: #fff;
+    }
+
+    .result {
+      margin-top: 14px;
+      border-top: 1px dashed var(--line);
+      padding-top: 12px;
+      display: none;
+    }
+
+    .box {
+      border: 1px solid #dbc79f;
+      background: linear-gradient(180deg, #fffefb, #faf4e7);
+      border-radius: 10px;
+      padding: 12px;
+      line-height: 1.65;
+      white-space: pre-line;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 10px;
+    }
+
+    .pill {
+      border: 1px solid #ccb790;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      background: #fff6e7;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 0.83rem;
+      color: #5d503b;
+    }
+
+    .inline-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 0.88rem;
+    }
+
+    .inline-toggle input {
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 6, 3, 0.48);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 50;
+    }
+
+    .modal-card {
+      width: min(460px, 100%);
+      border: 1px solid #c8b086;
+      border-radius: 12px;
+      background: #fffdf7;
+      padding: 16px;
+    }
+
+    .price {
+      font-size: 1.45rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin: 8px 0 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <svg class="motif" viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="none" stroke="#90682c" stroke-width="2">
+          <circle cx="100" cy="100" r="70"></circle>
+          <circle cx="100" cy="100" r="52"></circle>
+          <path d="M100 30C72 58 72 142 100 170C128 142 128 58 100 30Z"></path>
+          <path d="M30 100C58 72 142 72 170 100C142 128 58 128 30 100Z"></path>
+        </g>
+      </svg>
+      <h1>Korean Saju Reading</h1>
+      <p class="desc">
+        Get a free Korean Saju summary with your birth date first. If you want the complete Four Pillars and Five Elements analysis, unlock the full report with PayPal.
+      </p>
+    </section>
+
+    <section class="card">
+      <form id="form">
+        <div class="row">
+          <div>
+            <label for="birthYear">Birth Year</label>
+            <select id="birthYear" required></select>
+          </div>
+          <div>
+            <label for="birthMonth">Birth Month</label>
+            <select id="birthMonth" required></select>
+          </div>
+          <div>
+            <label for="birthDay">Birth Day</label>
+            <select id="birthDay" required></select>
+          </div>
+          <div>
+            <label>Birth Time (for full report)</label>
+            <div class="row" style="grid-template-columns:1fr 1fr 1fr;">
+              <select id="birthHour"></select>
+              <select id="birthMinute"></select>
+              <select id="birthAmPm">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
+            </div>
+            <label class="inline-toggle">
+              <input id="unknownTime" type="checkbox">
+              I don't know my birth time
+            </label>
+          </div>
+          <div>
+            <label for="gender">Gender (for full report)</label>
+            <select id="gender">
+              <option value="unknown">Prefer not to say</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="btns">
+          <button type="submit" class="primary">See Free Reading</button>
+          <button id="detailBtn" type="button" disabled>Unlock Full Reading (PayPal)</button>
+        </div>
+        <p id="formMessage" class="note" style="display:none;"></p>
+      </form>
+
+      <div id="basicResult" class="result">
+        <h3>Free Reading</h3>
+        <div id="basicTags" class="pill-row"></div>
+        <div id="basicText" class="box"></div>
+      </div>
+
+      <div id="detailResult" class="result">
+        <h3>Full Reading (Paid)</h3>
+        <div id="detailTags" class="pill-row"></div>
+        <div id="detailText" class="box"></div>
+      </div>
+
+      <p class="note">Secure checkout via PayPal. Receiver: <strong>sinmihyeon@gmail.com</strong></p>
+    </section>
+  </div>
+
+  <div id="payModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h3>Unlock Full Saju Reading</h3>
+      <p>After payment, your full Four Pillars + Five Elements analysis will be available immediately.</p>
+      <p class="price">USD $9.90</p>
+      <div class="btns">
+        <button id="cancelPay" type="button">Cancel</button>
+        <button id="goPayPal" class="primary" type="button">Pay with PayPal</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("form");
+    const detailBtn = document.getElementById("detailBtn");
+    const payModal = document.getElementById("payModal");
+    const cancelPay = document.getElementById("cancelPay");
+    const goPayPal = document.getElementById("goPayPal");
+    const basicResult = document.getElementById("basicResult");
+    const basicTags = document.getElementById("basicTags");
+    const basicText = document.getElementById("basicText");
+    const detailResult = document.getElementById("detailResult");
+    const detailTags = document.getElementById("detailTags");
+    const detailText = document.getElementById("detailText");
+    const birthYear = document.getElementById("birthYear");
+    const birthMonth = document.getElementById("birthMonth");
+    const birthDay = document.getElementById("birthDay");
+    const birthHour = document.getElementById("birthHour");
+    const birthMinute = document.getElementById("birthMinute");
+    const birthAmPm = document.getElementById("birthAmPm");
+    const unknownTime = document.getElementById("unknownTime");
+    const formMessage = document.getElementById("formMessage");
+
+    let latestInput = null;
+
+    function renderTags(container, tags) {
+      container.innerHTML = tags.map((tag) => `<span class="pill">${tag}</span>`).join("");
+    }
+
+    function populateDateSelects() {
+      const currentYear = new Date().getFullYear();
+      for (let y = currentYear; y >= 1930; y -= 1) {
+        const op = document.createElement("option");
+        op.value = String(y);
+        op.textContent = String(y);
+        birthYear.appendChild(op);
+      }
+      for (let m = 1; m <= 12; m += 1) {
+        const op = document.createElement("option");
+        op.value = String(m).padStart(2, "0");
+        op.textContent = String(m);
+        birthMonth.appendChild(op);
+      }
+      for (let d = 1; d <= 31; d += 1) {
+        const op = document.createElement("option");
+        op.value = String(d).padStart(2, "0");
+        op.textContent = String(d);
+        birthDay.appendChild(op);
+      }
+
+      birthYear.value = String(currentYear - 30);
+      birthMonth.value = "01";
+      syncDayOptions();
+    }
+
+    function populateTimeSelects() {
+      for (let h = 1; h <= 12; h += 1) {
+        const op = document.createElement("option");
+        op.value = String(h).padStart(2, "0");
+        op.textContent = String(h);
+        birthHour.appendChild(op);
+      }
+      for (let m = 0; m <= 59; m += 1) {
+        const op = document.createElement("option");
+        op.value = String(m).padStart(2, "0");
+        op.textContent = String(m).padStart(2, "0");
+        birthMinute.appendChild(op);
+      }
+      birthHour.value = "12";
+      birthMinute.value = "00";
+      birthAmPm.value = "PM";
+    }
+
+    function syncDayOptions() {
+      const y = Number(birthYear.value);
+      const m = Number(birthMonth.value);
+      if (!y || !m) return;
+
+      const maxDay = new Date(y, m, 0).getDate();
+      const currentDay = Number(birthDay.value || "1");
+      birthDay.innerHTML = "";
+
+      for (let d = 1; d <= maxDay; d += 1) {
+        const op = document.createElement("option");
+        op.value = String(d).padStart(2, "0");
+        op.textContent = String(d);
+        birthDay.appendChild(op);
+      }
+
+      const safeDay = Math.min(currentDay, maxDay);
+      birthDay.value = String(safeDay).padStart(2, "0");
+    }
+
+    function getInput() {
+      const y = birthYear.value;
+      const m = birthMonth.value;
+      const d = birthDay.value;
+      const birthDate = `${y}-${m}-${d}`;
+      const gender = document.getElementById("gender").value || "unknown";
+      const hour12 = Number(birthHour.value || "12");
+      const minute = birthMinute.value || "00";
+      const ampm = birthAmPm.value || "PM";
+      const hour24 = (hour12 % 12) + (ampm === "PM" ? 12 : 0);
+      const hh = String(hour24).padStart(2, "0");
+      const timeValue = unknownTime.checked ? "unknown" : `${hh}:${minute}`;
+      return { birthDate, birthTime: timeValue, gender };
+    }
+
+    unknownTime.addEventListener("change", () => {
+      const disabled = unknownTime.checked;
+      birthHour.disabled = disabled;
+      birthMinute.disabled = disabled;
+      birthAmPm.disabled = disabled;
+    });
+    birthYear.addEventListener("change", syncDayOptions);
+    birthMonth.addEventListener("change", syncDayOptions);
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const input = getInput();
+      latestInput = input;
+      formMessage.style.display = "none";
+      detailBtn.disabled = true;
+
+      try {
+        const res = await fetch(`/api/saju/basic?birthDate=${encodeURIComponent(input.birthDate)}`);
+        const data = await res.json();
+        if (!res.ok) {
+          formMessage.textContent = data.error || "Could not load your free reading.";
+          formMessage.style.display = "block";
+          return;
+        }
+
+        renderTags(basicTags, data.tags);
+        basicText.textContent = data.summary;
+        basicResult.style.display = "block";
+        detailBtn.disabled = false;
+        detailResult.style.display = "none";
+      } catch (err) {
+        formMessage.textContent = "Connection error. Start the server with 'npm start' and open http://localhost:3000.";
+        formMessage.style.display = "block";
+      }
+    });
+
+    detailBtn.addEventListener("click", () => {
+      if (!latestInput) return;
+      payModal.style.display = "flex";
+    });
+
+    cancelPay.addEventListener("click", () => {
+      payModal.style.display = "none";
+    });
+
+    payModal.addEventListener("click", (e) => {
+      if (e.target === payModal) payModal.style.display = "none";
+    });
+
+    goPayPal.addEventListener("click", async () => {
+      if (!latestInput) return;
+      try {
+        const qs = new URLSearchParams({
+          birthDate: latestInput.birthDate,
+          birthTime: latestInput.birthTime,
+          gender: latestInput.gender
+        });
+        const res = await fetch(`/api/paypal/checkout-url?${qs.toString()}`);
+        const data = await res.json();
+        if (!res.ok) {
+          alert(data.error || "Failed to create PayPal checkout.");
+          return;
+        }
+        window.location.href = data.checkoutUrl;
+      } catch (err) {
+        alert("Connection error. Please refresh and try again.");
+      }
+    });
+
+    async function verifyPaymentAndLoadDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const session = params.get("session");
+      const paid = params.get("paid");
+      if (paid !== "1" || !session) return;
+
+      const verifyParams = new URLSearchParams({
+        session,
+        tx: params.get("tx") || "",
+        st: params.get("st") || ""
+      });
+      await fetch(`/api/payment/verify?${verifyParams.toString()}`);
+
+      const detailRes = await fetch(`/api/saju/detail?session=${encodeURIComponent(session)}`);
+      const detailData = await detailRes.json();
+      if (!detailRes.ok) {
+        alert(detailData.error || "Failed to load full reading.");
+        return;
+      }
+
+      renderTags(detailTags, detailData.tags);
+      detailText.textContent = detailData.detail;
+      detailResult.style.display = "block";
+      detailResult.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState({}, "", window.location.pathname);
+    }
+
+    populateDateSelects();
+    populateTimeSelects();
+    verifyPaymentAndLoadDetail();
+  </script>
+</body>
+</html>
