@@ -15,7 +15,7 @@
       --accent-dark: #8f6b34;
       --gold: #c9a96a;
       --gold-soft: #d4af37;
-      --muted: #b8ac93;
+      --muted: #45453d;
       --brush: rgba(255, 255, 255, 0.06);
     }
 
@@ -86,6 +86,10 @@
       letter-spacing: 0.02em;
       text-shadow: #454242  3px 3px;
     }
+    h3 {
+      color: #e6e4df;
+      text-shadow: rgb(50, 50, 50) 2px 2px;
+    }
 
     .desc {
       margin: 0;
@@ -96,20 +100,19 @@
 
     .card {
       margin-top: 20px;
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background:
-        linear-gradient(180deg, rgba(8, 15, 28, 0.58), rgba(8, 15, 28, 0.72)),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 420'%3E%3Crect width='1400' height='420' fill='%230d1627'/%3E%3Cg fill='%23efe9db' fill-opacity='0.19'%3E%3Cpath d='M0 290Q120 210 250 270T540 260T850 270T1160 230T1400 250L1400 420L0 420Z'/%3E%3Cpath d='M0 340Q160 260 320 320T700 310T1100 320T1400 290L1400 420L0 420Z' fill-opacity='0.13'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.12'%3E%3Cellipse cx='220' cy='170' rx='180' ry='70'/%3E%3Cellipse cx='720' cy='150' rx='240' ry='78'/%3E%3Cellipse cx='1140' cy='180' rx='180' ry='66'/%3E%3C/g%3E%3C/svg%3E");
-      padding: 24px;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.34);
-      color: #d6d0c1;
+     background:
+        linear-gradient(180deg, rgba(244, 244, 244, 0), rgba(218, 186, 135, 0.72));
+
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(199, 137, 12, 0.34);
+      color: #f3f0eb;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: rgba(8, 15, 28, 0.78) !important;
+      /* background-color: rgba(8, 15, 28, 0.78) !important; */
       border-color: rgba(201, 169, 106, 0.55) !important;
-      color: #efe7d2 !important;
     }
 
     .row {
@@ -120,7 +123,7 @@
 
     label {
       font-size: 0.84rem;
-      color: #d7c9a8;
+      color: #2f2e2c;
       display: block;
       margin-bottom: 6px;
       letter-spacing: 0.02em;
@@ -128,11 +131,11 @@
 
     input, select {
       width: 100%;
-      border: 1px solid rgba(201, 169, 106, 0.46);
+      border: 2px solid rgb(213 166 72 / 46%);
       border-radius: 10px;
       height: 42px;
       padding: 0 10px;
-      background: rgba(9, 16, 28, 0.72);
+      background: rgb(183 148 65 / 72%);
       color: #f6f1e4;
     }
 
@@ -209,23 +212,22 @@
 
     .detail-zodiac {
       margin: 12px 0 14px;
-      border: 1px solid rgba(201, 169, 106, 0.44);
+      border: 1px solid rgba(201, 169, 106, 0.55);
       border-radius: 12px;
       padding: 10px;
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, rgba(15, 25, 42, 0.86), rgba(9, 16, 28, 0.88));
+        linear-gradient(180deg, rgba(244, 244, 244, 0), rgba(218, 186, 135, 0.72));
     }
 
     .detail-year-spirit {
       margin: 0 0 12px;
-      border: 1px solid rgba(201, 169, 106, 0.44);
+      border: 1px solid rgba(201, 169, 106, 0.55);
       border-radius: 12px;
       padding: 10px 12px;
       background:
-        linear-gradient(180deg, rgba(16, 26, 44, 0.86), rgba(8, 15, 28, 0.9));
+        linear-gradient(180deg, rgba(244, 244, 244, 0), rgba(218, 186, 135, 0.72));
       position: relative;
       overflow: hidden;
     }
@@ -241,7 +243,7 @@
 
     .detail-year-spirit h4 {
       margin: 0 0 2px;
-      color: #e2c98f;
+      color: #3c3328;
       font-size: 0.95rem;
       position: relative;
       z-index: 1;
@@ -249,7 +251,7 @@
 
     .detail-year-spirit p {
       margin: 0;
-      color: #c3b69a;
+      color: #4a4033;
       font-size: 0.84rem;
       position: relative;
       z-index: 1;
@@ -269,7 +271,7 @@
     .detail-zodiac h4 {
       margin: 0 0 8px;
       font-size: 0.95rem;
-      color: #dbc28d;
+      color: #3f3528;
     }
 
     .zodiac-grid {
@@ -279,14 +281,13 @@
     }
 
     .zodiac-chip {
-      border: 1px solid rgba(201, 169, 106, 0.38);
+      border: 1px solid rgba(201, 169, 106, 0.55);
       border-radius: 9px;
       min-height: 62px;
       padding: 6px 4px;
       text-align: center;
       background:
-        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.08) 0%, transparent 42%),
-        linear-gradient(180deg, rgba(13, 23, 40, 0.82), rgba(8, 15, 28, 0.84));
+        linear-gradient(180deg, rgba(244, 244, 244, 0), rgba(218, 186, 135, 0.72));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -300,8 +301,8 @@
       font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 0.03em;
-      color: #ead5a3;
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.22);
+      color: #3f3528;
+      text-shadow: none;
     }
 
     .zodiac-icon {
@@ -322,7 +323,7 @@
     .zodiac-icon line,
     .zodiac-icon polyline {
       fill: none;
-      stroke: #efe1bf;
+      stroke: #4a4033;
       stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -330,7 +331,7 @@
 
     .zodiac-sub {
       font-size: 0.68rem;
-      color: #b8aa8d;
+      color: #4c4134;
     }
 
     .detail-layout {
@@ -346,7 +347,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      opacity: 0.16;
+      opacity: 0.08;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%230b1321'/%3E%3Cg fill='none' stroke='%23efe7d2' stroke-opacity='0.45' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M28 500Q68 450 114 474Q154 494 196 462Q222 440 248 448'/%3E%3Cpath d='M42 188Q82 142 126 166Q162 186 200 156Q224 138 248 146'/%3E%3Cpath d='M948 166Q988 118 1038 144Q1076 164 1118 132Q1144 112 1172 124'/%3E%3Cpath d='M930 520Q972 468 1018 492Q1060 514 1102 484Q1130 462 1164 474'/%3E%3Cpath d='M80 560Q110 524 144 542Q172 558 204 534'/%3E%3Cpath d='M992 562Q1026 526 1060 544Q1088 560 1118 538'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.06'%3E%3Cellipse cx='220' cy='350' rx='220' ry='86'/%3E%3Cellipse cx='980' cy='350' rx='206' ry='80'/%3E%3C/g%3E%3Ctext x='58' y='108' fill='%23d4af37' fill-opacity='0.22' font-size='48'%3E子%3C/text%3E%3Ctext x='1018' y='106' fill='%23d4af37' fill-opacity='0.22' font-size='48'%3E寅%3C/text%3E%3Ctext x='48' y='644' fill='%23d4af37' fill-opacity='0.2' font-size='48'%3E午%3C/text%3E%3Ctext x='1020' y='644' fill='%23d4af37' fill-opacity='0.2' font-size='48'%3E亥%3C/text%3E%3C/svg%3E");
       background-size: cover;
       background-repeat: no-repeat;
@@ -354,12 +355,11 @@
     }
 
     .detail-card {
-      border: 1px solid rgba(201, 169, 106, 0.4);
+      border: 1px solid rgba(201, 169, 106, 0.55);
       border-radius: 12px;
       padding: 15px;
       background:
-        radial-gradient(circle at 90% 8%, rgba(212, 175, 55, 0.08), transparent 24%),
-        linear-gradient(180deg, rgba(15, 24, 41, 0.9), rgba(8, 15, 27, 0.92));
+        linear-gradient(180deg, rgba(244, 244, 244, 0), rgba(218, 186, 135, 0.72));
       position: relative;
       z-index: 1;
     }
@@ -367,7 +367,7 @@
     .detail-card h4 {
       margin: 0 0 8px;
       font-size: 1rem;
-      color: #dec893;
+      color: #3c3226;
       border-left: 3px solid var(--gold);
       padding-left: 8px;
     }
@@ -378,17 +378,17 @@
       padding: 2px 8px;
       border: 1px solid rgba(201, 169, 106, 0.48);
       border-radius: 999px;
-      color: #d7c08f;
+      color: #4a4033;
       font-size: 0.72rem;
       letter-spacing: 0.04em;
-      background: rgba(201, 169, 106, 0.12);
+      background: rgba(240, 220, 178, 0.32);
     }
 
     .detail-list {
       margin: 0;
       padding-left: 18px;
       line-height: 1.7;
-      color: #e8deca;
+      color: #2f2e2c;
     }
 
     .detail-list li { margin-bottom: 3px; }
