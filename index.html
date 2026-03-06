@@ -6,62 +6,120 @@
   <title>Korean Saju Reading</title>
   <style>
     :root {
-      --bg: #f6f1e3;
-      --ink: #1f1a13;
-      --line: #c9b48a;
-      --paper: #fffdf7;
-      --accent: #982d1f;
-      --accent-dark: #6f1e14;
+      --bg: #0d1422;
+      --bg-deep: #0a101b;
+      --ink: #f4f1e8;
+      --line: rgba(201, 169, 106, 0.48);
+      --paper: rgba(12, 21, 36, 0.78);
+      --accent: #c9a96a;
+      --accent-dark: #8f6b34;
+      --gold: #c9a96a;
+      --gold-soft: #d4af37;
+      --muted: #b8ac93;
+      --brush: rgba(255, 255, 255, 0.06);
     }
 
     * { box-sizing: border-box; }
     body {
+      position: relative;
       margin: 0;
       color: var(--ink);
       font-family: "Georgia", "Times New Roman", serif;
-      background: radial-gradient(circle at top left, #efe5ca 0%, var(--bg) 40%);
+      background: url("./img_1.png") center center / cover no-repeat fixed;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      opacity: 0.36;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='920' height='560' viewBox='0 0 920 560'%3E%3Crect width='920' height='560' fill='%230c1422'/%3E%3Cg fill='none' stroke='%23e8e1d2' stroke-opacity='0.34' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M26 468Q72 420 118 446Q162 472 208 438Q244 410 282 426Q312 438 336 424'/%3E%3Cpath d='M338 480Q384 432 430 456Q476 482 522 446Q552 422 588 434Q618 444 644 430'/%3E%3Cpath d='M646 470Q694 420 742 444Q786 468 832 436Q864 412 896 424'/%3E%3Cpath d='M48 166Q92 126 132 150Q172 172 214 144Q242 124 274 136'/%3E%3Cpath d='M376 150Q420 112 462 136Q502 158 544 130Q572 112 606 122'/%3E%3Cpath d='M688 178Q734 136 774 160Q812 182 854 152Q882 132 912 144'/%3E%3C/g%3E%3Cg fill='none' stroke='%23dbd4c7' stroke-opacity='0.22' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M76 296q34-38 68 0q-34 38-68 0Z'/%3E%3Cpath d='M246 284q36-40 72 0q-36 40-72 0Z'/%3E%3Cpath d='M430 300q34-36 68 0q-34 36-68 0Z'/%3E%3Cpath d='M604 286q36-38 72 0q-36 38-72 0Z'/%3E%3Cpath d='M772 300q34-36 68 0q-34 36-68 0Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.18' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M104 90q24-26 50 0q-24 26-50 0Z'/%3E%3Cpath d='M510 84q24-24 48 0q-24 24-48 0Z'/%3E%3Cpath d='M796 94q22-24 44 0q-22 24-44 0Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23f3ede0' stroke-opacity='0.12' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M4 362Q54 322 106 356'/%3E%3Cpath d='M286 346Q338 304 390 340'/%3E%3Cpath d='M566 360Q616 320 670 354'/%3E%3Cpath d='M836 354Q878 320 916 350'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 920px 560px;
+      background-repeat: repeat;
+      background-position: top left;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.52;
+      background:
+        linear-gradient(180deg, rgba(8, 14, 24, 0.52), rgba(6, 10, 18, 0.62)),
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.04), transparent 28%);
     }
 
     .wrap {
       max-width: 980px;
       margin: 0 auto;
       padding: 24px 16px 48px;
+      position: relative;
+    }
+
+    .wrap::before {
+      content: "";
+      position: fixed;
+      inset: 14px;
+      border: 1px solid rgba(201, 169, 106, 0.34);
+      border-radius: 22px;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.26);
+      z-index: -1;
     }
 
     .hero {
       border: 1px solid var(--line);
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fffcf4 0%, #f7eed9 100%);
-      padding: 24px 20px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(8, 15, 28, 0.58), rgba(8, 15, 28, 0.72)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 420'%3E%3Crect width='1400' height='420' fill='%230d1627'/%3E%3Cg fill='%23efe9db' fill-opacity='0.19'%3E%3Cpath d='M0 290Q120 210 250 270T540 260T850 270T1160 230T1400 250L1400 420L0 420Z'/%3E%3Cpath d='M0 340Q160 260 320 320T700 310T1100 320T1400 290L1400 420L0 420Z' fill-opacity='0.13'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.12'%3E%3Cellipse cx='220' cy='170' rx='180' ry='70'/%3E%3Cellipse cx='720' cy='150' rx='240' ry='78'/%3E%3Cellipse cx='1140' cy='180' rx='180' ry='66'/%3E%3C/g%3E%3C/svg%3E");
+      padding: 38px 30px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(201, 169, 106, 0.34);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
-    .motif {
+    .hero::before {
+      content: "";
       position: absolute;
-      right: -26px;
-      top: -18px;
-      width: 190px;
-      opacity: 0.2;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.14;
+      background: linear-gradient(90deg, rgba(201, 169, 106, 0.06), transparent 26%, transparent 74%, rgba(201, 169, 106, 0.06));
     }
+
+    .hero::after { display: none; }
 
     h1 {
       margin: 0 0 10px;
       font-size: clamp(1.4rem, 4vw, 2.3rem);
+      letter-spacing: 0.02em;
     }
 
     .desc {
       margin: 0;
       line-height: 1.6;
       max-width: 720px;
+      color: #d6d0c1;
     }
 
     .card {
       margin-top: 20px;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--paper);
-      padding: 16px;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 88% 6%, rgba(212, 175, 55, 0.08), transparent 26%),
+        linear-gradient(180deg, rgba(13, 22, 38, 0.84), rgba(8, 14, 24, 0.86));
+      padding: 24px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.34);
     }
 
     .row {
@@ -72,18 +130,20 @@
 
     label {
       font-size: 0.84rem;
-      color: #5a4a34;
+      color: #d7c9a8;
       display: block;
       margin-bottom: 6px;
+      letter-spacing: 0.02em;
     }
 
     input, select {
       width: 100%;
-      border: 1px solid #cfbc95;
+      border: 1px solid rgba(201, 169, 106, 0.46);
       border-radius: 10px;
       height: 42px;
       padding: 0 10px;
-      background: #fffefb;
+      background: rgba(9, 16, 28, 0.72);
+      color: #f6f1e4;
     }
 
     .btns {
@@ -95,34 +155,41 @@
 
     button {
       height: 42px;
-      border-radius: 10px;
-      border: 1px solid #c2aa81;
-      background: #f7ead2;
+      border-radius: 11px;
+      border: 1px solid rgba(201, 169, 106, 0.76);
+      background: linear-gradient(180deg, rgba(201, 169, 106, 0.24), rgba(143, 107, 52, 0.2));
       padding: 0 14px;
       cursor: pointer;
+      color: #f4ead5;
+      font-weight: 600;
     }
 
     .primary {
-      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
-      border-color: var(--accent-dark);
-      color: #fff;
+      background: linear-gradient(180deg, #d4af37, #9a6f2f);
+      border-color: #c9a96a;
+      color: #1d1509;
     }
 
     .result {
       margin-top: 14px;
       border-top: 1px dashed var(--line);
-      padding-top: 12px;
+      padding-top: 18px;
       display: none;
     }
 
     .box {
-      border: 1px solid #dbc79f;
-      background: linear-gradient(180deg, #fffefb, #faf4e7);
-      border-radius: 10px;
-      padding: 12px;
-      line-height: 1.65;
+      border: 1px solid rgba(201, 169, 106, 0.44);
+      background:
+        radial-gradient(circle at 12% 24%, rgba(255, 255, 255, 0.06), transparent 32%),
+        linear-gradient(180deg, rgba(14, 24, 40, 0.92), rgba(9, 16, 28, 0.94));
+      border-radius: 12px;
+      padding: 16px;
+      line-height: 1.74;
       white-space: pre-line;
+      color: #ece5d4;
     }
+
+    .box strong { color: #d8b877; }
 
     .pill-row {
       display: flex;
@@ -132,18 +199,209 @@
     }
 
     .pill {
-      border: 1px solid #ccb790;
+      border: 1px solid rgba(201, 169, 106, 0.58);
       border-radius: 999px;
       padding: 4px 10px;
       font-size: 0.8rem;
-      background: #fff6e7;
+      background: linear-gradient(180deg, rgba(201, 169, 106, 0.2), rgba(143, 107, 52, 0.16));
+      color: #f3e6ce;
     }
 
     .note {
       margin-top: 10px;
       font-size: 0.83rem;
-      color: #5d503b;
+      color: var(--muted);
     }
+
+    .result-action {
+      margin-top: 10px;
+    }
+
+    .detail-zodiac {
+      margin: 12px 0 14px;
+      border: 1px solid rgba(201, 169, 106, 0.44);
+      border-radius: 12px;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255, 255, 255, 0.06), transparent 22%),
+        linear-gradient(180deg, rgba(15, 25, 42, 0.86), rgba(9, 16, 28, 0.88));
+    }
+
+    .detail-year-spirit {
+      margin: 0 0 12px;
+      border: 1px solid rgba(201, 169, 106, 0.44);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background:
+        linear-gradient(180deg, rgba(16, 26, 44, 0.86), rgba(8, 15, 28, 0.9));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-year-spirit::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.16;
+      pointer-events: none;
+      background: center/contain no-repeat var(--spirit-bg, none);
+    }
+
+    .detail-year-spirit h4 {
+      margin: 0 0 2px;
+      color: #e2c98f;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-year-spirit p {
+      margin: 0;
+      color: #c3b69a;
+      font-size: 0.84rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-zodiac::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='210' viewBox='0 0 420 210'%3E%3Cg fill='none' stroke='%23f5e7c7' stroke-width='1.3' stroke-opacity='0.75'%3E%3Cpath d='M25 165Q40 120 84 125Q118 130 123 98Q128 72 156 70Q182 67 192 93Q201 117 176 131Q158 140 162 159Q168 181 194 186'/%3E%3Cpath d='M214 178Q226 126 270 130Q299 133 307 104Q315 76 345 78Q376 80 381 113Q386 144 359 159Q343 168 346 183Q352 200 377 202'/%3E%3Cpath d='M90 66Q108 40 132 53Q150 62 162 45Q176 25 203 31Q231 37 236 62Q242 89 217 98Q198 104 198 123Q199 142 222 149'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 420px 210px;
+      background-repeat: repeat;
+    }
+
+    .detail-zodiac h4 {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: #dbc28d;
+    }
+
+    .zodiac-grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .zodiac-chip {
+      border: 1px solid rgba(201, 169, 106, 0.38);
+      border-radius: 9px;
+      min-height: 62px;
+      padding: 6px 4px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.08) 0%, transparent 42%),
+        linear-gradient(180deg, rgba(13, 23, 40, 0.82), rgba(8, 15, 28, 0.84));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .zodiac-brush {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #ead5a3;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.22);
+    }
+
+    .zodiac-icon {
+      width: 38px;
+      height: 24px;
+      margin-bottom: 2px;
+      opacity: 0.42;
+    }
+
+    .zodiac-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .zodiac-icon path,
+    .zodiac-icon circle,
+    .zodiac-icon ellipse,
+    .zodiac-icon line,
+    .zodiac-icon polyline {
+      fill: none;
+      stroke: #efe1bf;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .zodiac-sub {
+      font-size: 0.68rem;
+      color: #b8aa8d;
+    }
+
+    .detail-layout {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-layout::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Crect width='1200' height='700' fill='%230b1321'/%3E%3Cg fill='none' stroke='%23efe7d2' stroke-opacity='0.45' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M28 500Q68 450 114 474Q154 494 196 462Q222 440 248 448'/%3E%3Cpath d='M42 188Q82 142 126 166Q162 186 200 156Q224 138 248 146'/%3E%3Cpath d='M948 166Q988 118 1038 144Q1076 164 1118 132Q1144 112 1172 124'/%3E%3Cpath d='M930 520Q972 468 1018 492Q1060 514 1102 484Q1130 462 1164 474'/%3E%3Cpath d='M80 560Q110 524 144 542Q172 558 204 534'/%3E%3Cpath d='M992 562Q1026 526 1060 544Q1088 560 1118 538'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.06'%3E%3Cellipse cx='220' cy='350' rx='220' ry='86'/%3E%3Cellipse cx='980' cy='350' rx='206' ry='80'/%3E%3C/g%3E%3Ctext x='58' y='108' fill='%23d4af37' fill-opacity='0.22' font-size='48'%3E子%3C/text%3E%3Ctext x='1018' y='106' fill='%23d4af37' fill-opacity='0.22' font-size='48'%3E寅%3C/text%3E%3Ctext x='48' y='644' fill='%23d4af37' fill-opacity='0.2' font-size='48'%3E午%3C/text%3E%3Ctext x='1020' y='644' fill='%23d4af37' fill-opacity='0.2' font-size='48'%3E亥%3C/text%3E%3C/svg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .detail-card {
+      border: 1px solid rgba(201, 169, 106, 0.4);
+      border-radius: 12px;
+      padding: 15px;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(212, 175, 55, 0.08), transparent 24%),
+        linear-gradient(180deg, rgba(15, 24, 41, 0.9), rgba(8, 15, 27, 0.92));
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail-card h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #dec893;
+      border-left: 3px solid var(--gold);
+      padding-left: 8px;
+    }
+
+    .detail-caption {
+      display: inline-block;
+      margin: 0 0 7px;
+      padding: 2px 8px;
+      border: 1px solid rgba(201, 169, 106, 0.48);
+      border-radius: 999px;
+      color: #d7c08f;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      background: rgba(201, 169, 106, 0.12);
+    }
+
+    .detail-list {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.7;
+      color: #e8deca;
+    }
+
+    .detail-list li { margin-bottom: 3px; }
 
     .inline-toggle {
       display: flex;
@@ -172,31 +430,32 @@
 
     .modal-card {
       width: min(460px, 100%);
-      border: 1px solid #c8b086;
+      border: 1px solid rgba(201, 169, 106, 0.46);
       border-radius: 12px;
-      background: #fffdf7;
+      background: linear-gradient(180deg, rgba(17, 28, 47, 0.96), rgba(9, 16, 28, 0.96));
       padding: 16px;
+      color: #efe7d2;
     }
 
     .price {
       font-size: 1.45rem;
-      color: var(--accent-dark);
+      color: var(--gold-soft);
       font-weight: 700;
       margin: 8px 0 4px;
+    }
+
+    @media (max-width: 860px) {
+      .zodiac-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .zodiac-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <section class="hero">
-      <svg class="motif" viewBox="0 0 200 200" aria-hidden="true">
-        <g fill="none" stroke="#90682c" stroke-width="2">
-          <circle cx="100" cy="100" r="70"></circle>
-          <circle cx="100" cy="100" r="52"></circle>
-          <path d="M100 30C72 58 72 142 100 170C128 142 128 58 100 30Z"></path>
-          <path d="M30 100C58 72 142 72 170 100C142 128 58 128 30 100Z"></path>
-        </g>
-      </svg>
       <h1>Korean Saju Reading</h1>
       <p class="desc">
         Get a free Korean Saju summary with your birth date first. If you want the complete Four Pillars and Five Elements analysis, unlock the full report with PayPal.
@@ -245,7 +504,6 @@
         </div>
         <div class="btns">
           <button type="submit" class="primary">See Free Reading</button>
-          <button id="detailBtn" type="button" disabled>Unlock Full Reading (PayPal)</button>
         </div>
         <p id="formMessage" class="note" style="display:none;"></p>
       </form>
@@ -254,12 +512,20 @@
         <h3>Free Reading</h3>
         <div id="basicTags" class="pill-row"></div>
         <div id="basicText" class="box"></div>
+        <div class="result-action">
+          <button id="detailBtn" type="button" disabled>View Detailed Reading (Test)</button>
+        </div>
       </div>
 
       <div id="detailResult" class="result">
-        <h3>Full Reading (Paid)</h3>
+        <h3>Detailed Reading</h3>
         <div id="detailTags" class="pill-row"></div>
-        <div id="detailText" class="box"></div>
+        <div id="yearSpirit" class="detail-year-spirit"></div>
+        <div class="detail-zodiac">
+          <h4>12 Zodiac Ink Motif</h4>
+          <div id="zodiacGrid" class="zodiac-grid"></div>
+        </div>
+        <div id="detailContent" class="detail-layout"></div>
       </div>
 
       <p class="note">Secure checkout via PayPal. Receiver: <strong>sinmihyeon@gmail.com</strong></p>
@@ -289,7 +555,9 @@
     const basicText = document.getElementById("basicText");
     const detailResult = document.getElementById("detailResult");
     const detailTags = document.getElementById("detailTags");
-    const detailText = document.getElementById("detailText");
+    const yearSpirit = document.getElementById("yearSpirit");
+    const detailContent = document.getElementById("detailContent");
+    const zodiacGrid = document.getElementById("zodiacGrid");
     const birthYear = document.getElementById("birthYear");
     const birthMonth = document.getElementById("birthMonth");
     const birthDay = document.getElementById("birthDay");
@@ -300,9 +568,377 @@
     const formMessage = document.getElementById("formMessage");
 
     let latestInput = null;
+    const API_BASE = (location.port === "5500" || location.protocol === "file:")
+      ? "http://127.0.0.1:3000"
+      : "";
+    const STEMS = ["갑", "을", "병", "정", "무", "기", "경", "신", "임", "계"];
+    const BRANCHES = ["자", "축", "인", "묘", "진", "사", "오", "미", "신", "유", "술", "해"];
+    const STEMS_HANJA = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
+    const BRANCHES_HANJA = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+    const STEMS_PINYIN = ["Jia", "Yi", "Bing", "Ding", "Wu", "Ji", "Geng", "Xin", "Ren", "Gui"];
+    const BRANCHES_PINYIN = ["Zi", "Chou", "Yin", "Mao", "Chen", "Si", "Wu", "Wei", "Shen", "You", "Xu", "Hai"];
+    const ELEMENT_BY_STEM = {
+      갑: "Wood", 을: "Wood",
+      병: "Fire", 정: "Fire",
+      무: "Earth", 기: "Earth",
+      경: "Metal", 신: "Metal",
+      임: "Water", 계: "Water"
+    };
+    const ELEMENT_BY_BRANCH = {
+      자: "Water", 축: "Earth", 인: "Wood", 묘: "Wood",
+      진: "Earth", 사: "Fire", 오: "Fire", 미: "Earth",
+      신: "Metal", 유: "Metal", 술: "Earth", 해: "Water"
+    };
+    const ZODIAC_INK = [
+      { ko: "자", hanja: "子", en: "Rat" },
+      { ko: "축", hanja: "丑", en: "Ox" },
+      { ko: "인", hanja: "寅", en: "Tiger" },
+      { ko: "묘", hanja: "卯", en: "Rabbit" },
+      { ko: "진", hanja: "辰", en: "Dragon" },
+      { ko: "사", hanja: "巳", en: "Snake" },
+      { ko: "오", hanja: "午", en: "Horse" },
+      { ko: "미", hanja: "未", en: "Goat" },
+      { ko: "신", hanja: "申", en: "Monkey" },
+      { ko: "유", hanja: "酉", en: "Rooster" },
+      { ko: "술", hanja: "戌", en: "Dog" },
+      { ko: "해", hanja: "亥", en: "Pig" }
+    ];
 
     function renderTags(container, tags) {
       container.innerHTML = tags.map((tag) => `<span class="pill">${tag}</span>`).join("");
+    }
+
+    function zodiacInkSvg(ko) {
+      const icons = {
+        "자": "<svg viewBox='0 0 48 24'><path d='M5 16Q14 9 22 14Q29 18 36 13Q41 10 43 13'/><circle cx='14' cy='10' r='1.5'/><line x1='4' y1='16' x2='1' y2='19'/><line x1='40' y1='14' x2='46' y2='10'/></svg>",
+        "축": "<svg viewBox='0 0 48 24'><path d='M6 15Q15 8 27 10Q36 11 41 16'/><path d='M10 10Q8 6 4 8'/><path d='M16 9Q16 5 20 7'/><line x1='14' y1='15' x2='13' y2='20'/><line x1='31' y1='14' x2='32' y2='20'/></svg>",
+        "인": "<svg viewBox='0 0 48 24'><path d='M5 17Q13 7 22 10Q31 13 40 8'/><path d='M10 8L13 4'/><path d='M16 8L19 4'/><line x1='20' y1='13' x2='16' y2='18'/><line x1='29' y1='13' x2='33' y2='18'/></svg>",
+        "묘": "<svg viewBox='0 0 48 24'><path d='M8 17Q16 9 24 11Q31 13 38 10'/><path d='M14 9L12 4'/><path d='M20 9L22 4'/><line x1='24' y1='13' x2='30' y2='12'/><line x1='24' y1='15' x2='30' y2='16'/></svg>",
+        "진": "<svg viewBox='0 0 48 24'><path d='M4 16Q11 5 20 9Q26 12 30 8Q35 3 41 8Q45 12 42 17'/><polyline points='25,9 29,5 31,9'/><line x1='14' y1='15' x2='18' y2='18'/></svg>",
+        "사": "<svg viewBox='0 0 48 24'><path d='M6 18Q13 10 20 14Q26 18 33 12Q38 8 42 11'/><circle cx='41' cy='11' r='1.4'/><line x1='4' y1='18' x2='1' y2='21'/></svg>",
+        "오": "<svg viewBox='0 0 48 24'><path d='M5 16Q14 7 25 11Q33 14 42 10'/><path d='M18 9L17 4'/><line x1='18' y1='15' x2='16' y2='21'/><line x1='30' y1='14' x2='32' y2='21'/><path d='M42 10Q45 8 47 9'/></svg>",
+        "미": "<svg viewBox='0 0 48 24'><path d='M7 16Q15 9 24 11Q31 13 38 9'/><path d='M14 9Q11 6 10 3'/><path d='M20 9Q23 6 24 3'/><line x1='21' y1='14' x2='19' y2='20'/></svg>",
+        "신": "<svg viewBox='0 0 48 24'><path d='M8 16Q15 8 23 11Q30 14 37 11'/><circle cx='16' cy='8' r='1.3'/><path d='M27 9Q31 5 35 8'/><line x1='23' y1='13' x2='25' y2='19'/></svg>",
+        "유": "<svg viewBox='0 0 48 24'><path d='M8 17Q16 9 25 11Q31 12 37 9'/><path d='M16 9L14 5'/><path d='M18 9L21 5'/><line x1='24' y1='13' x2='24' y2='20'/><line x1='28' y1='13' x2='28' y2='20'/></svg>",
+        "술": "<svg viewBox='0 0 48 24'><path d='M6 17Q14 8 23 11Q31 14 39 10'/><path d='M13 10L11 6'/><path d='M18 10L21 7'/><line x1='24' y1='13' x2='22' y2='19'/><line x1='30' y1='13' x2='32' y2='19'/></svg>",
+        "해": "<svg viewBox='0 0 48 24'><path d='M6 16Q15 9 25 11Q33 12 40 14'/><circle cx='34' cy='10' r='1.3'/><path d='M40 14Q44 13 46 15'/><line x1='20' y1='14' x2='18' y2='20'/></svg>"
+      };
+      return icons[ko] || icons["자"];
+    }
+
+    function renderZodiacInk(activeBranches) {
+      zodiacGrid.innerHTML = ZODIAC_INK.map((z) => {
+        const active = activeBranches.includes(z.ko);
+        return `
+          <div class="zodiac-chip" style="${active ? "box-shadow: inset 0 0 0 2px #8f6a2e;" : ""}">
+            <div class="zodiac-icon">${zodiacInkSvg(z.ko)}</div>
+            <div class="zodiac-brush">${z.hanja}</div>
+            <div class="zodiac-sub">${z.en}</div>
+            <div class="zodiac-sub">${z.ko}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderDetailSections(sections) {
+      detailContent.innerHTML = sections.map((section) => `
+        <article class="detail-card">
+          ${section.caption ? `<span class="detail-caption">${section.caption}</span>` : ""}
+          <h4>${section.title}</h4>
+          <ul class="detail-list">
+            ${section.items.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function yearSpiritSvg(ko) {
+      const icons = {
+        "자": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M22 108Q68 58 112 84Q150 108 190 78Q222 54 240 74'/><circle cx='86' cy='66' r='4'/><path d='M14 110Q8 120 6 130'/><path d='M194 84Q230 74 252 58'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>子</text></svg>",
+        "축": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M18 108Q70 54 146 72Q206 86 240 118'/><path d='M66 70Q58 52 42 58'/><path d='M92 66Q94 50 110 56'/><line x1='92' y1='108' x2='86' y2='138'/><line x1='164' y1='104' x2='170' y2='138'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>丑</text></svg>",
+        "인": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M20 118Q64 52 118 72Q170 90 224 62'/><path d='M58 62L74 38'/><path d='M90 60L106 34'/><line x1='120' y1='86' x2='98' y2='120'/><line x1='164' y1='90' x2='184' y2='122'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>寅</text></svg>",
+        "묘": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M28 118Q82 64 132 84Q174 100 222 76'/><path d='M88 70L78 36'/><path d='M118 72L128 36'/><line x1='134' y1='92' x2='172' y2='84'/><line x1='132' y1='104' x2='174' y2='112'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>卯</text></svg>",
+        "진": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M20 110Q58 42 108 70Q144 90 170 64Q200 34 232 60Q250 76 240 104'/><polyline points='144,66 164,40 176,66'/><line x1='86' y1='102' x2='112' y2='124'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>辰</text></svg>",
+        "사": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M20 116Q70 76 114 102Q156 126 198 90Q226 66 244 82'/><circle cx='236' cy='80' r='4'/><path d='M12 120Q6 130 6 138'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>巳</text></svg>",
+        "오": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M18 112Q76 48 140 74Q188 92 238 66'/><path d='M96 66L90 34'/><line x1='98' y1='102' x2='90' y2='138'/><line x1='168' y1='102' x2='176' y2='138'/><path d='M238 66Q252 58 258 62'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>午</text></svg>",
+        "미": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M24 112Q74 64 132 82Q176 96 220 72'/><path d='M82 70Q66 56 64 36'/><path d='M112 70Q128 56 130 36'/><line x1='126' y1='98' x2='116' y2='138'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>未</text></svg>",
+        "신": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M24 114Q68 62 120 82Q162 98 208 82'/><circle cx='78' cy='66' r='3'/><path d='M142 72Q164 46 186 66'/><line x1='122' y1='92' x2='134' y2='132'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>申</text></svg>",
+        "유": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M24 116Q74 64 128 82Q172 96 214 72'/><path d='M82 72L72 48'/><path d='M96 72L112 48'/><line x1='128' y1='98' x2='128' y2='138'/><line x1='146' y1='98' x2='146' y2='138'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>酉</text></svg>",
+        "술": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M24 116Q72 62 126 82Q172 98 218 74'/><path d='M74 74L64 50'/><path d='M104 74L120 56'/><line x1='132' y1='98' x2='120' y2='132'/><line x1='164' y1='98' x2='176' y2='132'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>戌</text></svg>",
+        "해": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160'><g fill='none' stroke='%23efe1bf' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><path d='M20 112Q76 66 144 84Q194 98 236 108'/><circle cx='184' cy='76' r='3'/><path d='M236 108Q250 104 258 112'/><line x1='118' y1='98' x2='108' y2='134'/></g><text x='194' y='140' fill='%23d4af37' font-size='44' opacity='0.7'>亥</text></svg>"
+      };
+      return icons[ko] || icons["자"];
+    }
+
+    function renderYearSpirit(ko) {
+      const item = ZODIAC_INK.find((z) => z.ko === ko) || ZODIAC_INK[0];
+      const dataUrl = `url("data:image/svg+xml,${encodeURIComponent(yearSpiritSvg(item.ko))}")`;
+      yearSpirit.style.setProperty("--spirit-bg", dataUrl);
+      yearSpirit.innerHTML = `
+        <h4>Year Spirit Motif: ${item.hanja} (${item.en})</h4>
+        <p>Ink-brush guardian symbol based on your birth year pillar branch.</p>
+      `;
+    }
+
+    function localBasicFallback(birthDate) {
+      const traits = [
+        "You are practical and consistent when building long-term goals.",
+        "You tend to move fast once your direction is clear.",
+        "You read people and timing well in uncertain situations.",
+        "You perform best when structure and creativity are balanced.",
+        "You grow quickly when you commit to a steady weekly routine."
+      ];
+      let hash = 0;
+      for (let i = 0; i < birthDate.length; i += 1) hash = (hash * 31 + birthDate.charCodeAt(i)) % 10000;
+      const i = hash % traits.length;
+      return {
+        tags: ["Free Preview", `Seed ${hash}`, "Offline Mode"],
+        summary: `Birth Date: ${birthDate}\n${traits[i]}\n\nOffline preview is shown because the API server is not reachable. Start the server to see backend-calculated Saju.`
+      };
+    }
+
+    function getYearPillarFromDate(birthDate) {
+      const [y, m, d] = birthDate.split("-").map(Number);
+      const sajuYear = (m < 2 || (m === 2 && d < 4)) ? y - 1 : y;
+      const stemIndex = ((sajuYear - 4) % 10 + 10) % 10;
+      const branchIndex = ((sajuYear - 4) % 12 + 12) % 12;
+      return { stemIndex, branchIndex };
+    }
+
+    function jdn(y, m, d) {
+      const a = Math.floor((14 - m) / 12);
+      const y2 = y + 4800 - a;
+      const m2 = m + 12 * a - 3;
+      return d + Math.floor((153 * m2 + 2) / 5) + 365 * y2 + Math.floor(y2 / 4) - Math.floor(y2 / 100) + Math.floor(y2 / 400) - 32045;
+    }
+
+    function getDayMasterFromDate(birthDate) {
+      const [y, m, d] = birthDate.split("-").map(Number);
+      const ref = 2445733; // 1984-02-02 갑자일
+      const dayIndex = jdn(y, m, d) - ref;
+      const stemIndex = ((dayIndex % 10) + 10) % 10;
+      return stemIndex;
+    }
+
+    function formatPillar(stemIndex, branchIndex) {
+      const eng = `${STEMS_PINYIN[stemIndex]}-${BRANCHES_PINYIN[branchIndex]}`;
+      const hanja = `${STEMS_HANJA[stemIndex]}${BRANCHES_HANJA[branchIndex]}`;
+      return `${eng} (${hanja})`;
+    }
+
+    function formatStem(stemIndex) {
+      return `${STEMS_PINYIN[stemIndex]} (${STEMS_HANJA[stemIndex]})`;
+    }
+
+    function createClientBasicReading(birthDate) {
+      const year = getYearPillarFromDate(birthDate);
+      const dayMasterIndex = getDayMasterFromDate(birthDate);
+      const dayMasterKo = STEMS[dayMasterIndex];
+      const element = ELEMENT_BY_STEM[dayMasterKo] || "Balanced";
+      const yearPillarText = formatPillar(year.stemIndex, year.branchIndex);
+      const dayMasterText = formatStem(dayMasterIndex);
+      const luckyFocus = {
+        Wood: "growth, learning, and long-term planning",
+        Fire: "visibility, momentum, and personal brand",
+        Earth: "stability, structure, and financial discipline",
+        Metal: "decision quality, standards, and execution",
+        Water: "networking, adaptability, and strategy"
+      };
+      return {
+        tags: [`Year Pillar ${yearPillarText}`, `Day Master ${dayMasterText}`, `${element} Core`],
+        summary: [
+          `Year Pillar: ${yearPillarText}`,
+          `Day Master: ${dayMasterText} / Core Element: ${element}`,
+          "",
+          `Interpretation: Your chart currently emphasizes ${element} qualities. This often appears as ${luckyFocus[element]}.`,
+          "Strength: You can make progress when your goals are clear and your routine is consistent.",
+          "Watch-out: If pace is too fast, your energy can scatter. Keep one priority and one weekly checkpoint.",
+          "",
+          "This is an expanded free preview. The paid report includes full Four Pillars breakdown, Five Elements balance, timing trends, and practical guidance."
+        ].join("\n")
+      };
+    }
+
+    function getSolarMonthOrder(month, day) {
+      if ((month === 2 && day >= 4) || (month === 3 && day < 6)) return 0;
+      if ((month === 3 && day >= 6) || (month === 4 && day < 5)) return 1;
+      if ((month === 4 && day >= 5) || (month === 5 && day < 6)) return 2;
+      if ((month === 5 && day >= 6) || (month === 6 && day < 6)) return 3;
+      if ((month === 6 && day >= 6) || (month === 7 && day < 7)) return 4;
+      if ((month === 7 && day >= 7) || (month === 8 && day < 8)) return 5;
+      if ((month === 8 && day >= 8) || (month === 9 && day < 8)) return 6;
+      if ((month === 9 && day >= 8) || (month === 10 && day < 8)) return 7;
+      if ((month === 10 && day >= 8) || (month === 11 && day < 7)) return 8;
+      if ((month === 11 && day >= 7) || (month === 12 && day < 7)) return 9;
+      if ((month === 12 && day >= 7) || (month === 1 && day < 6)) return 10;
+      return 11;
+    }
+
+    function getMonthPillar(yearStemIndex, month, day) {
+      const order = getSolarMonthOrder(month, day);
+      const branchIndex = (2 + order) % 12;
+      const baseByYearStem = [2, 4, 6, 8, 0, 2, 4, 6, 8, 0];
+      const stemIndex = (baseByYearStem[yearStemIndex] + order) % 10;
+      return { stemIndex, branchIndex };
+    }
+
+    function getDayPillar(birthDate) {
+      const [y, m, d] = birthDate.split("-").map(Number);
+      const ref = 2445733;
+      const dayIndex = jdn(y, m, d) - ref;
+      return {
+        stemIndex: ((dayIndex % 10) + 10) % 10,
+        branchIndex: ((dayIndex % 12) + 12) % 12
+      };
+    }
+
+    function getHourPillar(dayStemIndex, hour24) {
+      const hourBranchIndex = Math.floor(((hour24 + 1) % 24) / 2);
+      const baseByDayStem = [0, 2, 4, 6, 8, 0, 2, 4, 6, 8];
+      const stemIndex = (baseByDayStem[dayStemIndex] + hourBranchIndex) % 10;
+      return { stemIndex, branchIndex: hourBranchIndex };
+    }
+
+    function scoreElements(pillars) {
+      const score = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
+      const list = [pillars.year, pillars.month, pillars.day, pillars.hour];
+      for (const p of list) {
+        score[ELEMENT_BY_STEM[STEMS[p.stemIndex]]] += 1;
+        score[ELEMENT_BY_BRANCH[BRANCHES[p.branchIndex]]] += 1;
+      }
+      return score;
+    }
+
+    function getHourLabel(hour24) {
+      const h = hour24 % 24;
+      if (h < 12) return `${String(h).padStart(2, "0")}:00 AM`;
+      if (h === 12) return "12:00 PM";
+      return `${String(h - 12).padStart(2, "0")}:00 PM`;
+    }
+
+    function createClientDetailedReading(input) {
+      const [y, m, d] = input.birthDate.split("-").map(Number);
+      const year = getYearPillarFromDate(input.birthDate);
+      const month = getMonthPillar(year.stemIndex, m, d);
+      const day = getDayPillar(input.birthDate);
+
+      const isUnknownTime = input.birthTime === "unknown";
+      const hour24 = isUnknownTime ? 12 : Number(input.birthTime.slice(0, 2));
+      const hour = getHourPillar(day.stemIndex, hour24);
+
+      const pillars = { year, month, day, hour };
+      const scores = scoreElements(pillars);
+      const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const dominant = ranked[0][0];
+      const weak = ranked[ranked.length - 1][0];
+      const dayMasterText = formatStem(day.stemIndex);
+      const dayMasterElement = ELEMENT_BY_STEM[STEMS[day.stemIndex]];
+      const age = Math.max(1, new Date().getFullYear() - y + 1);
+      const yongshin = weak;
+      const healthByElement = {
+        Wood: "liver, tendons, and stress regulation",
+        Fire: "heart, circulation, and sleep quality",
+        Earth: "digestion, pancreas/stomach balance",
+        Metal: "lungs, skin, and respiratory rhythm",
+        Water: "kidneys, lower back, and fluid balance"
+      };
+
+      const elementFocus = {
+        Wood: "education, planning, and healthy boundaries",
+        Fire: "visibility, confidence, and leadership moments",
+        Earth: "systems, savings, and long-term reliability",
+        Metal: "decision quality, process discipline, and standards",
+        Water: "networking, mobility, and strategic timing"
+      };
+
+      const scoresText = ranked.map(([k, v]) => `${k}:${v}`).join(", ");
+      const birthTimeText = isUnknownTime
+        ? "Birth time not provided. Hour pillar is estimated using 12:00 PM."
+        : `Birth time used: ${input.birthTime} (${getHourLabel(hour24)} baseline).`;
+
+      const yearBranch = BRANCHES[year.branchIndex];
+      const dayBranch = BRANCHES[day.branchIndex];
+      const hasTravelStar = ["인", "신", "사", "해"].includes(dayBranch);
+      const hasCharmStar = ["자", "오", "묘", "유"].includes(dayBranch);
+      const hasStrongDrive = yearBranch === "오" || dayBranch === "오" || dominant === "Fire";
+
+      const currentYear = new Date().getFullYear();
+      const annualFlow = [
+        `${currentYear}: build foundations and reduce risky expansion`,
+        `${currentYear + 1}: stronger momentum for career visibility and role change`,
+        `${currentYear + 2}: optimize money structure, contracts, and long-term commitments`
+      ];
+
+      const decadeFlow = [
+        `Age ${Math.max(1, age)}-${age + 9}: identity and direction shaping period`,
+        `Age ${age + 10}-${age + 19}: skill compounding and network leverage`,
+        `Age ${age + 20}-${age + 29}: major outcomes through consistency and timing`
+      ];
+
+      const branchesUsed = [BRANCHES[year.branchIndex], BRANCHES[month.branchIndex], BRANCHES[day.branchIndex], BRANCHES[hour.branchIndex]];
+      const sectionCaptions = [
+        `${STEMS_HANJA[year.stemIndex]}${BRANCHES_HANJA[year.branchIndex]} YEAR`,
+        `${STEMS_HANJA[month.stemIndex]}${BRANCHES_HANJA[month.branchIndex]} MONTH`,
+        `${STEMS_HANJA[day.stemIndex]}${BRANCHES_HANJA[day.branchIndex]} DAY`,
+        `${STEMS_HANJA[hour.stemIndex]}${BRANCHES_HANJA[hour.branchIndex]} HOUR`
+      ];
+
+      return {
+        tags: [
+          `Day Master ${dayMasterText}`,
+          `Dominant ${dominant}`,
+          `Needs Support ${weak}`,
+          `Yongshin ${yongshin}`,
+          `Element Score ${scoresText}`
+        ],
+        branchesUsed,
+        sections: [
+          {
+            caption: sectionCaptions[0],
+            title: "1) Basic Structure (Myeongsik)",
+            items: [
+              `Birth Date: ${input.birthDate}`,
+              birthTimeText,
+              `Four Pillars: ${formatPillar(year.stemIndex, year.branchIndex)} / ${formatPillar(month.stemIndex, month.branchIndex)} / ${formatPillar(day.stemIndex, day.branchIndex)} / ${formatPillar(hour.stemIndex, hour.branchIndex)}`,
+              `Day Master (Ilgan): ${dayMasterText} (${dayMasterElement})`,
+              `Five Elements Distribution: ${scoresText}`,
+              `Interpretation core: ${dominant} is strong, ${weak} needs reinforcement.`
+            ]
+          },
+          {
+            caption: sectionCaptions[1],
+            title: "2) Core Fortune + Strategy",
+            items: [
+              `Yongshin (supportive element): ${yongshin}. Build routines and environments that increase ${yongshin} energy.`,
+              `Health watch area: ${healthByElement[weak]}. Prevention works best when sleep/eating cadence stays stable.`,
+              `Daewoon (10-year flow): ${decadeFlow[0]} / ${decadeFlow[1]} / ${decadeFlow[2]}.`,
+              `Sewoon (annual flow): ${annualFlow[0]} / ${annualFlow[1]} / ${annualFlow[2]}.`,
+              `Yeokmasal tendency (movement/travel): ${hasTravelStar ? "active" : "moderate"} (${dayBranch} branch signal).`,
+              `Dohwasal tendency (charm/social pull): ${hasCharmStar ? "active" : "moderate"} (${dayBranch} branch signal).`,
+              `High-drive sign (Baekhodaesal-like): ${hasStrongDrive ? "noticeable" : "stable"} (fire/horse signature).`
+            ]
+          },
+          {
+            caption: sectionCaptions[2],
+            title: "3) Consultation Tips",
+            items: [
+              "Ask specific scenario questions instead of yes/no fate questions.",
+              "Example: 'I will launch a project this year. Which quarter needs the most risk control?'",
+              `Example: 'Which habits strengthen my Yongshin (${yongshin}) and stabilize ${weak} imbalance?'`,
+              "Use Saju as a compass for better choices, not as a fixed destiny."
+            ]
+          },
+          {
+            caption: sectionCaptions[3],
+            title: "4) 30-Day Action Plan",
+            items: [
+              `Keep one main objective aligned with ${elementFocus[dominant]}.`,
+              `Add one weekly habit that strengthens ${weak} (your Yongshin direction).`,
+              "Run a Sunday review: sleep quality, focus level, and money decisions, then tune the next week plan."
+            ]
+          }
+        ]
+      };
     }
 
     function populateDateSelects() {
@@ -400,29 +1036,23 @@
       formMessage.style.display = "none";
       detailBtn.disabled = true;
 
-      try {
-        const res = await fetch(`/api/saju/basic?birthDate=${encodeURIComponent(input.birthDate)}`);
-        const data = await res.json();
-        if (!res.ok) {
-          formMessage.textContent = data.error || "Could not load your free reading.";
-          formMessage.style.display = "block";
-          return;
-        }
-
-        renderTags(basicTags, data.tags);
-        basicText.textContent = data.summary;
-        basicResult.style.display = "block";
-        detailBtn.disabled = false;
-        detailResult.style.display = "none";
-      } catch (err) {
-        formMessage.textContent = "Connection error. Start the server with 'npm start' and open http://localhost:3000.";
-        formMessage.style.display = "block";
-      }
+      const data = createClientBasicReading(input.birthDate);
+      renderTags(basicTags, data.tags);
+      basicText.textContent = data.summary;
+      basicResult.style.display = "block";
+      detailBtn.disabled = false;
+      detailResult.style.display = "none";
     });
 
     detailBtn.addEventListener("click", () => {
       if (!latestInput) return;
-      payModal.style.display = "flex";
+      const detail = createClientDetailedReading(latestInput);
+      renderTags(detailTags, detail.tags);
+      renderYearSpirit(detail.branchesUsed[0]);
+      renderZodiacInk(detail.branchesUsed);
+      renderDetailSections(detail.sections);
+      detailResult.style.display = "block";
+      detailResult.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     cancelPay.addEventListener("click", () => {
@@ -441,7 +1071,7 @@
           birthTime: latestInput.birthTime,
           gender: latestInput.gender
         });
-        const res = await fetch(`/api/paypal/checkout-url?${qs.toString()}`);
+        const res = await fetch(`${API_BASE}/api/paypal/checkout-url?${qs.toString()}`);
         const data = await res.json();
         if (!res.ok) {
           alert(data.error || "Failed to create PayPal checkout.");
@@ -464,9 +1094,9 @@
         tx: params.get("tx") || "",
         st: params.get("st") || ""
       });
-      await fetch(`/api/payment/verify?${verifyParams.toString()}`);
+      await fetch(`${API_BASE}/api/payment/verify?${verifyParams.toString()}`);
 
-      const detailRes = await fetch(`/api/saju/detail?session=${encodeURIComponent(session)}`);
+      const detailRes = await fetch(`${API_BASE}/api/saju/detail?session=${encodeURIComponent(session)}`);
       const detailData = await detailRes.json();
       if (!detailRes.ok) {
         alert(detailData.error || "Failed to load full reading.");
@@ -474,7 +1104,13 @@
       }
 
       renderTags(detailTags, detailData.tags);
-      detailText.textContent = detailData.detail;
+      renderZodiacInk([]);
+      renderDetailSections([
+        {
+          title: "Detailed Reading (Server)",
+          items: String(detailData.detail || "").split("\n").filter(Boolean)
+        }
+      ]);
       detailResult.style.display = "block";
       detailResult.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState({}, "", window.location.pathname);
