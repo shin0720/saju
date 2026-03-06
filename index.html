@@ -48,7 +48,7 @@
       content: "";
       position: fixed;
       inset: 14px;
-      border: 1px solid rgba(201, 169, 106, 0.34);
+      border: 4px solid rgb(177 128 32 / 34%);
       border-radius: 22px;
       pointer-events: none;
       box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.26);
@@ -59,12 +59,11 @@
       border: 1px solid var(--line);
       border-radius: 20px;
       background:
-        linear-gradient(180deg, rgba(8, 15, 28, 0.58), rgba(8, 15, 28, 0.72)),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 420'%3E%3Crect width='1400' height='420' fill='%230d1627'/%3E%3Cg fill='%23efe9db' fill-opacity='0.19'%3E%3Cpath d='M0 290Q120 210 250 270T540 260T850 270T1160 230T1400 250L1400 420L0 420Z'/%3E%3Cpath d='M0 340Q160 260 320 320T700 310T1100 320T1400 290L1400 420L0 420Z' fill-opacity='0.13'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.12'%3E%3Cellipse cx='220' cy='170' rx='180' ry='70'/%3E%3Cellipse cx='720' cy='150' rx='240' ry='78'/%3E%3Cellipse cx='1140' cy='180' rx='180' ry='66'/%3E%3C/g%3E%3C/svg%3E");
+        linear-gradient(180deg, rgba(244, 244, 244, 0.144), rgba(218, 186, 135, 0.72));
       padding: 38px 30px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(201, 169, 106, 0.34);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36), inset 0 0 0 1px rgba(199, 137, 12, 0.34);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -85,13 +84,14 @@
       margin: 0 0 10px;
       font-size: clamp(1.4rem, 4vw, 2.3rem);
       letter-spacing: 0.02em;
+      text-shadow: #454242  3px 3px;
     }
 
     .desc {
       margin: 0;
       line-height: 1.6;
       max-width: 720px;
-      color: #d6d0c1;
+      color: #454340;
     }
 
     .card {
@@ -99,10 +99,14 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       background:
-        radial-gradient(circle at 88% 6%, rgba(212, 175, 55, 0.08), transparent 26%),
-        linear-gradient(180deg, rgba(13, 22, 38, 0.84), rgba(8, 14, 24, 0.86));
+        linear-gradient(180deg, rgba(8, 15, 28, 0.58), rgba(8, 15, 28, 0.72)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 420'%3E%3Crect width='1400' height='420' fill='%230d1627'/%3E%3Cg fill='%23efe9db' fill-opacity='0.19'%3E%3Cpath d='M0 290Q120 210 250 270T540 260T850 270T1160 230T1400 250L1400 420L0 420Z'/%3E%3Cpath d='M0 340Q160 260 320 320T700 310T1100 320T1400 290L1400 420L0 420Z' fill-opacity='0.13'/%3E%3C/g%3E%3Cg fill='%23f4efdf' fill-opacity='0.12'%3E%3Cellipse cx='220' cy='170' rx='180' ry='70'/%3E%3Cellipse cx='720' cy='150' rx='240' ry='78'/%3E%3Cellipse cx='1140' cy='180' rx='180' ry='66'/%3E%3C/g%3E%3C/svg%3E");
       padding: 24px;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.34);
+      color: #d6d0c1;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .row {
